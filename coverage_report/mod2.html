@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: mef2_motor</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_mef2_motor'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_mef2_motor')">mef2_motor</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s8 cl rt"> 83.92</td>
+<td class="s8 cl rt"><a href="mod2.html#Line" > 87.30</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod2.html#Toggle" > 96.15</a></td>
+<td class="s8 cl rt"><a href="mod2.html#FSM" > 80.00</a></td>
+<td class="s7 cl rt"><a href="mod2.html#Branch" > 72.22</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/drueda/ArchivosParcial2/mef2_motor.sv')">/home/drueda/ArchivosParcial2/mef2_motor.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod2.html#inst_tag_2"  onclick="showContent('inst_tag_2')">tb_elevador.dut.u_mef2</a></td>
+<td class="s8 cl rt"> 83.92</td>
+<td class="s8 cl rt"><a href="mod2.html#Line" > 87.30</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod2.html#Toggle" > 96.15</a></td>
+<td class="s8 cl rt"><a href="mod2.html#FSM" > 80.00</a></td>
+<td class="s7 cl rt"><a href="mod2.html#Branch" > 72.22</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_mef2_motor'>
+<hr>
+<a name="inst_tag_2"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_2" >tb_elevador.dut.u_mef2</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s8 cl rt"> 83.92</td>
+<td class="s8 cl rt"><a href="mod2.html#Line" > 87.30</a></td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"><a href="mod2.html#Toggle" > 96.15</a></td>
+<td class="s8 cl rt"><a href="mod2.html#FSM" > 80.00</a></td>
+<td class="s7 cl rt"><a href="mod2.html#Branch" > 72.22</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s8 cl rt"> 83.92</td>
+<td class="s8 cl rt"> 87.30</td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"> 96.15</td>
+<td class="s8 cl rt"> 80.00</td>
+<td class="s7 cl rt"> 72.22</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s8 cl rt"> 89.06</td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"> 87.50</td>
+<td class="s9 cl rt"> 90.62</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod3.html#inst_tag_3" >dut</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td colspan=7>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_mef2_motor'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod2.html" >mef2_motor</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s8"><td class="lf">TOTAL</td><td></td><td>63</td><td>55</td><td>87.30</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>24</td><td>3</td><td>3</td><td>100.00</td></tr>
+<tr class="s8"><td class="lf">ALWAYS</td><td>34</td><td>60</td><td>52</td><td>86.67</td></tr>
+</table>
+<pre class="code"><br clear=all>
+23                          always_ff @(posedge clk or posedge rst) begin
+24         1/1                  if (rst) begin
+25         1/1                      current_pos &lt;= PISO_1;
+26                              end else begin
+27         1/1                      current_pos &lt;= next_pos;
+28                              end
+29                          end
+30                      
+31                          // 2. Logica combinacional Mealy (Siguiente piso y salidas en funcion de Estado + Destino)
+32                          always_comb begin
+33                              // Valores por defecto
+34         1/1                  next_pos = current_pos;
+35         1/1                  subir    = 1'b0;
+36         1/1                  bajar    = 1'b0;
+37         1/1                  llegada  = 1'b0;
+38                      
+39         1/1                  case (current_pos)
+40                                  PISO_1: begin
+41         1/1                          case (dest)
+42         4/4                              2'b00: begin next_pos = PISO_1; subir = 0; bajar = 0; llegada = 0; end
+43         4/4                              2'b01: begin next_pos = PISO_1; subir = 0; bajar = 0; llegada = 1; end
+44         4/4                              2'b10: begin next_pos = PISO_2; subir = 1; bajar = 0; llegada = 0; end
+45         4/4                              2'b11: begin next_pos = PISO_2; subir = 1; bajar = 0; llegada = 0; end
+46         <font color = "red">0/1     ==>                      default: next_pos = PISO_1;</font>
+47                                      endcase
+48                                  end
+49                      
+50                                  PISO_2: begin
+51         1/1                          case (dest)
+52         4/4                              2'b00: begin next_pos = PISO_2; subir = 0; bajar = 0; llegada = 0; end
+53         4/4                              2'b01: begin next_pos = PISO_1; subir = 0; bajar = 1; llegada = 0; end
+54         4/4                              2'b10: begin next_pos = PISO_2; subir = 0; bajar = 0; llegada = 1; end
+55         4/4                              2'b11: begin next_pos = PISO_3; subir = 1; bajar = 0; llegada = 0; end
+56         <font color = "red">0/1     ==>                      default: next_pos = PISO_2;</font>
+57                                      endcase
+58                                  end
+59                      
+60                                  PISO_3: begin
+61         1/1                          case (dest)
+62         4/4                              2'b00: begin next_pos = PISO_3; subir = 0; bajar = 0; llegada = 0; end
+63         4/4                              2'b01: begin next_pos = PISO_2; subir = 0; bajar = 1; llegada = 0; end
+64         <font color = "red">0/4     ==>                      2'b10: begin next_pos = PISO_2; subir = 0; bajar = 1; llegada = 0; end</font>
+65         4/4                              2'b11: begin next_pos = PISO_3; subir = 0; bajar = 0; llegada = 1; end
+66         <font color = "red">0/1     ==>                      default: next_pos = PISO_3;</font>
+67                                      endcase
+68                                  end
+69                      
+70                                  default: begin
+71         <font color = "red">0/1     ==>                  next_pos = PISO_1;</font>
+</pre>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod2.html" >mef2_motor</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s8">
+<td>Totals</td>
+<td class="rt">9</td>
+<td class="rt">8</td>
+<td class="rt">88.89 </td>
+</tr><tr class="s9">
+<td>Total Bits</td>
+<td class="rt">26</td>
+<td class="rt">25</td>
+<td class="rt">96.15 </td>
+</tr><tr class="s9">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">13</td>
+<td class="rt">12</td>
+<td class="rt">92.31 </td>
+</tr><tr class="s10">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">13</td>
+<td class="rt">13</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s8">
+<td>Ports</td>
+<td class="rt">7</td>
+<td class="rt">6</td>
+<td class="rt">85.71 </td>
+</tr><tr class="s9">
+<td>Port Bits</td>
+<td class="rt">18</td>
+<td class="rt">17</td>
+<td class="rt">94.44 </td>
+</tr><tr class="s8">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">9</td>
+<td class="rt">8</td>
+<td class="rt">88.89 </td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">9</td>
+<td class="rt">9</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s10">
+<td>Signals</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>Signal Bits</td>
+<td class="rt">8</td>
+<td class="rt">8</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>rst</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td class="s3 cl">No</td>
+<td>INPUT</td>
+</tr><tr>
+<td>dest[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>INPUT</td>
+</tr><tr>
+<td>piso_actual[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>subir</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>bajar</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>llegada</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td>OUTPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Toggle 0->1</td></tr><tr>
+<td>current_pos[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr><tr>
+<td>next_pos[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+</tr></table><br clear=all>
+<hr>
+<a name="FSM"></a>
+FSM Coverage for Module : <a href="mod2.html" >mef2_motor</a><br clear=all>
+<table align=left class="noborder">
+<caption><b>Summary for FSM :: current_pos</b></caption>
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th><th nowrap width=200></th></tr><tr class="wht">
+<td>States</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+<td>(Not included in score)</td>
+</tr><tr class="s8">
+<td>Transitions</td>
+<td class="rt">5</td>
+<td class="rt">4</td>
+<td class="rt">80.00 </td>
+<td></td>
+</tr><tr class="wht">
+<td>Sequences</td>
+<td class="rt">0</td>
+<td class="rt">0</td>
+<td></td>
+<td></td>
+</tr></table><br clear=all>
+<b>State, Transition and Sequence Details for FSM :: current_pos</b><hr>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">states</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>PISO_1</td>
+<td class="rt">25</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PISO_2</td>
+<td class="rt">44</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PISO_3</td>
+<td class="rt">55</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">transitions</td><td>Line No.</td><td class="alfsrt">Covered</td></tr><tr class="uGreen">
+<td nowrap>PISO_1->PISO_2</td>
+<td class="rt">44</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PISO_2->PISO_1</td>
+<td class="rt">25</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PISO_2->PISO_3</td>
+<td class="rt">55</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td nowrap>PISO_3->PISO_1</td>
+<td class="rt">25</td>
+<td>Not&nbsp;Covered</td>
+</tr><tr class="uGreen">
+<td nowrap>PISO_3->PISO_2</td>
+<td class="rt">63</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod2.html" >mef2_motor</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s7">
+<td>Branches</td>
+<td></td>
+<td class="rt">18</td>
+<td class="rt">13</td>
+<td class="rt">72.22 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">24</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s6">
+<td>CASE</td>
+<td class="rt">39</td>
+<td class="rt">16</td>
+<td class="rt">11</td>
+<td class="rt">68.75 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+24                 if (rst) begin
+                   <font color = "green">-1-</font>  
+25                     current_pos <= PISO_1;
+           <font color = "green">            ==></font>
+26                 end else begin
+27                     current_pos <= next_pos;
+           <font color = "green">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+39                 case (current_pos)
+                   <font color = "red">-1-</font>  
+40                     PISO_1: begin
+41                         case (dest)
+                           <font color = "red">-2-</font>  
+42                             2'b00: begin next_pos = PISO_1; subir = 0; bajar = 0; llegada = 0; end
+           <font color = "green">                    ==></font>
+43                             2'b01: begin next_pos = PISO_1; subir = 0; bajar = 0; llegada = 1; end
+           <font color = "green">                    ==></font>
+44                             2'b10: begin next_pos = PISO_2; subir = 1; bajar = 0; llegada = 0; end
+           <font color = "green">                    ==></font>
+45                             2'b11: begin next_pos = PISO_2; subir = 1; bajar = 0; llegada = 0; end
+           <font color = "green">                    ==></font>
+46                             default: next_pos = PISO_1;
+           <font color = "red">                    ==></font>
+47                         endcase
+48                     end
+49         
+50                     PISO_2: begin
+51                         case (dest)
+                           <font color = "red">-3-</font>  
+52                             2'b00: begin next_pos = PISO_2; subir = 0; bajar = 0; llegada = 0; end
+           <font color = "green">                    ==></font>
+53                             2'b01: begin next_pos = PISO_1; subir = 0; bajar = 1; llegada = 0; end
+           <font color = "green">                    ==></font>
+54                             2'b10: begin next_pos = PISO_2; subir = 0; bajar = 0; llegada = 1; end
+           <font color = "green">                    ==></font>
+55                             2'b11: begin next_pos = PISO_3; subir = 1; bajar = 0; llegada = 0; end
+           <font color = "green">                    ==></font>
+56                             default: next_pos = PISO_2;
+           <font color = "red">                    ==></font>
+57                         endcase
+58                     end
+59         
+60                     PISO_3: begin
+61                         case (dest)
+                           <font color = "red">-4-</font>  
+62                             2'b00: begin next_pos = PISO_3; subir = 0; bajar = 0; llegada = 0; end
+           <font color = "green">                    ==></font>
+63                             2'b01: begin next_pos = PISO_2; subir = 0; bajar = 1; llegada = 0; end
+           <font color = "green">                    ==></font>
+64                             2'b10: begin next_pos = PISO_2; subir = 0; bajar = 1; llegada = 0; end
+           <font color = "red">                    ==></font>
+65                             2'b11: begin next_pos = PISO_3; subir = 0; bajar = 0; llegada = 1; end
+           <font color = "green">                    ==></font>
+66                             default: next_pos = PISO_3;
+           <font color = "red">                    ==></font>
+67                         endcase
+68                     end
+69         
+70                     default: begin
+71                         next_pos = PISO_1;
+           <font color = "red">                ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>Status</th></tr><tr class="uGreen">
+<td align=center>PISO_1 </td>
+<td align=center>2'b00 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PISO_1 </td>
+<td align=center>2'b01 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PISO_1 </td>
+<td align=center>2'b10 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PISO_1 </td>
+<td align=center>2'b11 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>PISO_1 </td>
+<td align=center>default</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PISO_2 </td>
+<td align=center nowrap>-</td>
+<td align=center>2'b00 </td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PISO_2 </td>
+<td align=center nowrap>-</td>
+<td align=center>2'b01 </td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PISO_2 </td>
+<td align=center nowrap>-</td>
+<td align=center>2'b10 </td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PISO_2 </td>
+<td align=center nowrap>-</td>
+<td align=center>2'b11 </td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>PISO_2 </td>
+<td align=center nowrap>-</td>
+<td align=center>default</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PISO_3 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>2'b00 </td>
+<td>Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PISO_3 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>2'b01 </td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>PISO_3 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>2'b10 </td>
+<td>Not Covered</td>
+</tr><tr class="uGreen">
+<td align=center>PISO_3 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>2'b11 </td>
+<td>Covered</td>
+</tr><tr class="uRed">
+<td align=center>PISO_3 </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>default</td>
+<td>Not Covered</td>
+</tr><tr class="uRed">
+<td align=center>default</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_2">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_mef2_motor">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

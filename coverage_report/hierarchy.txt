@@ -1,0 +1,16 @@
+Design Hierarchy
+
+
+----------------
+SCORE  LINE   COND   TOGGLE FSM    BRANCH             
+ 88.78  88.89  90.91  93.90  90.91  79.31 tb_elevador 
+  
+  ----------------
+  SCORE  LINE   COND   TOGGLE FSM    BRANCH     
+   88.78  88.89  90.91  93.90  90.91  79.31 dut 
+    
+    ----------------
+    SCORE  LINE   COND   TOGGLE FSM    BRANCH        
+     96.24  94.44 100.00  95.83 100.00  90.91 u_mef1 
+     83.92  87.30 --      96.15  80.00  72.22 u_mef2 
+

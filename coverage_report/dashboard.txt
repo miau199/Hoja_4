@@ -1,0 +1,27 @@
+Dashboard
+
+Date: Thu Oct  1 13:38:06 2026
+
+User: drueda
+
+Version: X-2025.06-SP2-6
+Command line: urg -dir simv.vdb -format both -report coverage_report
+Number of tests: 1
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 88.78  88.89  90.91  93.90  90.91  79.31 
+
+
+-------------------------------------------------------------------------------
+Hierarchical coverage data for top-level instances 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME        
+ 88.78  88.89  90.91  93.90  90.91  79.31 tb_elevador 
+
+
+-------------------------------------------------------------------------------
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 88.78  88.89  90.91  93.90  90.91  79.31 
+

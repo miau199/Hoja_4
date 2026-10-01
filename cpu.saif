@@ -1,0 +1,236 @@
+(SAIFILE
+(SAIFVERSION "2.0")
+(DIRECTION "backward")
+(DESIGN )
+(DATE "Thu Oct 01 13:19:45 2026")
+(VENDOR "Synopsys, Inc.")
+(PROGRAM_NAME "fsdb2saif")
+(VERSION "Verdi_Y-2026.03-SP2")
+(DIVIDER / )
+(TIMESCALE 1 ps)
+(DURATION 140000)
+(INSTANCE tb_elevador
+  (NET
+    (clk
+      (T0 70000) (T1 70000) (TX 0)
+      (TC 27) (IG 0)
+    )
+    (reset
+      (T0 120000) (T1 20000) (TX 0)
+      (TC 1) (IG 0)
+    )
+    (b1
+      (T0 130000) (T1 10000) (TX 0)
+      (TC 2) (IG 0)
+    )
+    (b2
+      (T0 140000) (T1 0) (TX 0)
+      (TC 0) (IG 0)
+    )
+    (b3
+      (T0 130000) (T1 10000) (TX 0)
+      (TC 2) (IG 0)
+    )
+    (led_subiendo
+      (T0 120000) (T1 20000) (TX 0)
+      (TC 2) (IG 0)
+    )
+    (led_bajando
+      (T0 120000) (T1 20000) (TX 0)
+      (TC 2) (IG 0)
+    )
+    (led_piso1reset
+      (T0 140000) (T1 0) (TX 0)
+      (TC 0) (IG 0)
+    )
+    (led_piso1
+      (T0 60000) (T1 80000) (TX 0)
+      (TC 2) (IG 0)
+    )
+    (led_piso2
+      (T0 120000) (T1 20000) (TX 0)
+      (TC 4) (IG 0)
+    )
+    (led_piso3
+      (T0 100000) (T1 40000) (TX 0)
+      (TC 2) (IG 0)
+    )
+  )
+  (INSTANCE dut
+    (NET
+      (clk
+        (T0 70000) (T1 70000) (TX 0)
+        (TC 27) (IG 0)
+      )
+      (reset
+        (T0 120000) (T1 20000) (TX 0)
+        (TC 1) (IG 0)
+      )
+      (b1
+        (T0 130000) (T1 10000) (TX 0)
+        (TC 2) (IG 0)
+      )
+      (b2
+        (T0 140000) (T1 0) (TX 0)
+        (TC 0) (IG 0)
+      )
+      (b3
+        (T0 130000) (T1 10000) (TX 0)
+        (TC 2) (IG 0)
+      )
+      (led_subiendo
+        (T0 120000) (T1 20000) (TX 0)
+        (TC 2) (IG 0)
+      )
+      (led_bajando
+        (T0 120000) (T1 20000) (TX 0)
+        (TC 2) (IG 0)
+      )
+      (led_piso1reset
+        (T0 140000) (T1 0) (TX 0)
+        (TC 0) (IG 0)
+      )
+      (led_piso1
+        (T0 60000) (T1 80000) (TX 0)
+        (TC 2) (IG 0)
+      )
+      (led_piso2
+        (T0 120000) (T1 20000) (TX 0)
+        (TC 4) (IG 0)
+      )
+      (led_piso3
+        (T0 100000) (T1 40000) (TX 0)
+        (TC 2) (IG 0)
+      )
+      (dest_wire\[1\]
+        (T0 110000) (T1 30000) (TX 0)
+        (TC 2) (IG 0)
+      )
+      (dest_wire\[0\]
+        (T0 80000) (T1 60000) (TX 0)
+        (TC 4) (IG 0)
+      )
+      (piso_wire\[1\]
+        (T0 80000) (T1 60000) (TX 0)
+        (TC 2) (IG 0)
+      )
+      (piso_wire\[0\]
+        (T0 20000) (T1 120000) (TX 0)
+        (TC 4) (IG 0)
+      )
+      (llegada_wire
+        (T0 120000) (T1 20000) (TX 0)
+        (TC 4) (IG 0)
+      )
+    )
+    (INSTANCE u_mef1
+      (NET
+        (clk
+          (T0 70000) (T1 70000) (TX 0)
+          (TC 27) (IG 0)
+        )
+        (rst
+          (T0 120000) (T1 20000) (TX 0)
+          (TC 1) (IG 0)
+        )
+        (b1
+          (T0 130000) (T1 10000) (TX 0)
+          (TC 2) (IG 0)
+        )
+        (b2
+          (T0 140000) (T1 0) (TX 0)
+          (TC 0) (IG 0)
+        )
+        (b3
+          (T0 130000) (T1 10000) (TX 0)
+          (TC 2) (IG 0)
+        )
+        (llegada
+          (T0 120000) (T1 20000) (TX 0)
+          (TC 4) (IG 0)
+        )
+        (dest\[1\]
+          (T0 110000) (T1 30000) (TX 0)
+          (TC 2) (IG 0)
+        )
+        (dest\[0\]
+          (T0 80000) (T1 60000) (TX 0)
+          (TC 4) (IG 0)
+        )
+        (current_state\[1\]
+          (T0 110000) (T1 30000) (TX 0)
+          (TC 2) (IG 0)
+        )
+        (current_state\[0\]
+          (T0 80000) (T1 60000) (TX 0)
+          (TC 4) (IG 0)
+        )
+        (next_state\[1\]
+          (T0 115000) (T1 25000) (TX 0)
+          (TC 2) (IG 0)
+        )
+        (next_state\[0\]
+          (T0 90000) (T1 50000) (TX 0)
+          (TC 4) (IG 0)
+        )
+      )
+    )
+    (INSTANCE u_mef2
+      (NET
+        (clk
+          (T0 70000) (T1 70000) (TX 0)
+          (TC 27) (IG 0)
+        )
+        (rst
+          (T0 120000) (T1 20000) (TX 0)
+          (TC 1) (IG 0)
+        )
+        (dest\[1\]
+          (T0 110000) (T1 30000) (TX 0)
+          (TC 2) (IG 0)
+        )
+        (dest\[0\]
+          (T0 80000) (T1 60000) (TX 0)
+          (TC 4) (IG 0)
+        )
+        (piso_actual\[1\]
+          (T0 80000) (T1 60000) (TX 0)
+          (TC 2) (IG 0)
+        )
+        (piso_actual\[0\]
+          (T0 20000) (T1 120000) (TX 0)
+          (TC 4) (IG 0)
+        )
+        (subir
+          (T0 120000) (T1 20000) (TX 0)
+          (TC 2) (IG 0)
+        )
+        (bajar
+          (T0 120000) (T1 20000) (TX 0)
+          (TC 2) (IG 0)
+        )
+        (llegada
+          (T0 120000) (T1 20000) (TX 0)
+          (TC 4) (IG 0)
+        )
+        (current_pos\[1\]
+          (T0 80000) (T1 60000) (TX 0)
+          (TC 2) (IG 0)
+        )
+        (current_pos\[0\]
+          (T0 20000) (T1 120000) (TX 0)
+          (TC 4) (IG 0)
+        )
+        (next_pos\[1\]
+          (T0 80000) (T1 60000) (TX 0)
+          (TC 2) (IG 0)
+        )
+        (next_pos\[0\]
+          (T0 20000) (T1 120000) (TX 0)
+          (TC 4) (IG 0)
+        )
+      )
+    )
+  )
+)
+)

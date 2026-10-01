@@ -1,0 +1,15 @@
+Design Module List
+
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 88.78  88.89  90.91  93.90  90.91  79.31 
+
+
+Total modules in report: 4
+-------------------------------------------------------------------------------
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME          
+ 83.92  87.30 --      96.15  80.00  72.22 mef2_motor    
+ 89.06 --      87.50  90.62 --     --     elevador_top  
+ 96.24  94.44 100.00  95.83 100.00  90.91 mef1_requests 
+--     --     --     --     --     --     tb_elevador   
+

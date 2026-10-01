@@ -1,0 +1,32 @@
+<session version="1.1" release="X-2025.06-SP2-6" timestp="2026-10-01 19:37:54 GMT">
+  <info>
+    <attr name="datetime" value="Thu Oct  1 13:38:06 2026
+"/>
+    <attr name="command" value="urg -dir simv.vdb -format both -report coverage_report"/>
+    <attr name="top_instance" value="tb_elevador"/>
+  </info>
+  <hvp>
+    <datadef>
+      <metdef name="Line" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Cond" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Toggle" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="FSM" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Branch" type="ratio" aggregator="average" builtin="1" />
+    </datadef>
+  </hvp>
+  <old_coverage>
+  <scope type="top" name="top">
+    <metric name="Line" value="72/81" />
+    <metric name="Cond" value="10/11" />
+    <metric name="Toggle" value="77/82" />
+    <metric name="FSM" value="10/11" />
+    <metric name="Branch" value="23/29" />
+  </scope>
+  <scope type="instance" name="top">
+  </scope>
+  <scope type="group" name="top">
+  </scope>
+  <scope type="assert" name="Statistics">
+  </scope>
+  </old_coverage>
+</session>

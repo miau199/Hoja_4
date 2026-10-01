@@ -1,0 +1,712 @@
+===============================================================================
+Module : mef2_motor
+===============================================================================
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 83.92  87.30 --      96.15  80.00  72.22 
+
+Source File(s) : 
+
+/home/drueda/ArchivosParcial2/mef2_motor.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME                   
+ 83.92  87.30 --      96.15  80.00  72.22 tb_elevador.dut.u_mef2 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : mef2_motor
+
+             Line No.   Total   Covered  Percent
+TOTAL                       63       55    87.30
+ALWAYS             24        3        3   100.00
+ALWAYS             34       60       52    86.67
+
+23                          always_ff @(posedge clk or posedge rst) begin
+24         1/1                  if (rst) begin
+25         1/1                      current_pos <= PISO_1;
+26                              end else begin
+27         1/1                      current_pos <= next_pos;
+28                              end
+29                          end
+30                      
+31                          // 2. Logica combinacional Mealy (Siguiente piso y salidas en funcion de Estado + Destino)
+32                          always_comb begin
+33                              // Valores por defecto
+34         1/1                  next_pos = current_pos;
+35         1/1                  subir    = 1'b0;
+36         1/1                  bajar    = 1'b0;
+37         1/1                  llegada  = 1'b0;
+38                      
+39         1/1                  case (current_pos)
+40                                  PISO_1: begin
+41         1/1                          case (dest)
+42         4/4                              2'b00: begin next_pos = PISO_1; subir = 0; bajar = 0; llegada = 0; end
+43         4/4                              2'b01: begin next_pos = PISO_1; subir = 0; bajar = 0; llegada = 1; end
+44         4/4                              2'b10: begin next_pos = PISO_2; subir = 1; bajar = 0; llegada = 0; end
+45         4/4                              2'b11: begin next_pos = PISO_2; subir = 1; bajar = 0; llegada = 0; end
+46         0/1     ==>                      default: next_pos = PISO_1;
+47                                      endcase
+48                                  end
+49                      
+50                                  PISO_2: begin
+51         1/1                          case (dest)
+52         4/4                              2'b00: begin next_pos = PISO_2; subir = 0; bajar = 0; llegada = 0; end
+53         4/4                              2'b01: begin next_pos = PISO_1; subir = 0; bajar = 1; llegada = 0; end
+54         4/4                              2'b10: begin next_pos = PISO_2; subir = 0; bajar = 0; llegada = 1; end
+55         4/4                              2'b11: begin next_pos = PISO_3; subir = 1; bajar = 0; llegada = 0; end
+56         0/1     ==>                      default: next_pos = PISO_2;
+57                                      endcase
+58                                  end
+59                      
+60                                  PISO_3: begin
+61         1/1                          case (dest)
+62         4/4                              2'b00: begin next_pos = PISO_3; subir = 0; bajar = 0; llegada = 0; end
+63         4/4                              2'b01: begin next_pos = PISO_2; subir = 0; bajar = 1; llegada = 0; end
+64         0/4     ==>                      2'b10: begin next_pos = PISO_2; subir = 0; bajar = 1; llegada = 0; end
+65         4/4                              2'b11: begin next_pos = PISO_3; subir = 0; bajar = 0; llegada = 1; end
+66         0/1     ==>                      default: next_pos = PISO_3;
+67                                      endcase
+68                                  end
+69                      
+70                                  default: begin
+71         0/1     ==>                  next_pos = PISO_1;
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : mef2_motor
+                Total Covered Percent 
+Totals          9     8       88.89   
+Total Bits      26    25      96.15   
+Total Bits 0->1 13    12      92.31   
+Total Bits 1->0 13    13      100.00  
+
+                            
+Ports          7  6  85.71  
+Port Bits      18 17 94.44  
+Port Bits 0->1 9  8  88.89  
+Port Bits 1->0 9  9  100.00 
+
+                            
+Signals          2 2 100.00 
+Signal Bits      8 8 100.00 
+Signal Bits 0->1 4 4 100.00 
+Signal Bits 1->0 4 4 100.00 
+
+Port Details
+                 Toggle Toggle 1->0 Toggle 0->1 Direction 
+clk              Yes    Yes         Yes         INPUT     
+rst              No     Yes         No          INPUT     
+dest[1:0]        Yes    Yes         Yes         INPUT     
+piso_actual[1:0] Yes    Yes         Yes         OUTPUT    
+subir            Yes    Yes         Yes         OUTPUT    
+bajar            Yes    Yes         Yes         OUTPUT    
+llegada          Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+                 Toggle Toggle 1->0 Toggle 0->1 
+current_pos[1:0] Yes    Yes         Yes         
+next_pos[1:0]    Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+FSM Coverage for Module : mef2_motor
+Summary for FSM :: current_pos
+            Total Covered Percent                         
+States      3     3       100.00  (Not included in score) 
+Transitions 5     4       80.00                           
+Sequences   0     0                                       
+
+State, Transition and Sequence Details for FSM :: current_pos
+-------------------------------------------------------------------------------
+states Line No. Covered 
+PISO_1 25       Covered 
+PISO_2 44       Covered 
+PISO_3 55       Covered 
+
+transitions    Line No. Covered     
+PISO_1->PISO_2 44       Covered     
+PISO_2->PISO_1 25       Covered     
+PISO_2->PISO_3 55       Covered     
+PISO_3->PISO_1 25       Not Covered 
+PISO_3->PISO_2 63       Covered     
+
+
+-------------------------------------------------------------------------------
+Branch Coverage for Module : mef2_motor
+         Line No. Total Covered Percent 
+Branches          18    13      72.22   
+IF       24       2     2       100.00  
+CASE     39       16    11      68.75   
+
+
+24                 if (rst) begin
+                   -1-  
+25                     current_pos <= PISO_1;
+                       ==>
+26                 end else begin
+27                     current_pos <= next_pos;
+                       ==>
+
+Branches:
+
+-1- Status  
+1   Covered 
+0   Covered 
+
+
+39                 case (current_pos)
+                   -1-  
+40                     PISO_1: begin
+41                         case (dest)
+                           -2-  
+42                             2'b00: begin next_pos = PISO_1; subir = 0; bajar = 0; llegada = 0; end
+                               ==>
+43                             2'b01: begin next_pos = PISO_1; subir = 0; bajar = 0; llegada = 1; end
+                               ==>
+44                             2'b10: begin next_pos = PISO_2; subir = 1; bajar = 0; llegada = 0; end
+                               ==>
+45                             2'b11: begin next_pos = PISO_2; subir = 1; bajar = 0; llegada = 0; end
+                               ==>
+46                             default: next_pos = PISO_1;
+                               ==>
+47                         endcase
+48                     end
+49         
+50                     PISO_2: begin
+51                         case (dest)
+                           -3-  
+52                             2'b00: begin next_pos = PISO_2; subir = 0; bajar = 0; llegada = 0; end
+                               ==>
+53                             2'b01: begin next_pos = PISO_1; subir = 0; bajar = 1; llegada = 0; end
+                               ==>
+54                             2'b10: begin next_pos = PISO_2; subir = 0; bajar = 0; llegada = 1; end
+                               ==>
+55                             2'b11: begin next_pos = PISO_3; subir = 1; bajar = 0; llegada = 0; end
+                               ==>
+56                             default: next_pos = PISO_2;
+                               ==>
+57                         endcase
+58                     end
+59         
+60                     PISO_3: begin
+61                         case (dest)
+                           -4-  
+62                             2'b00: begin next_pos = PISO_3; subir = 0; bajar = 0; llegada = 0; end
+                               ==>
+63                             2'b01: begin next_pos = PISO_2; subir = 0; bajar = 1; llegada = 0; end
+                               ==>
+64                             2'b10: begin next_pos = PISO_2; subir = 0; bajar = 1; llegada = 0; end
+                               ==>
+65                             2'b11: begin next_pos = PISO_3; subir = 0; bajar = 0; llegada = 1; end
+                               ==>
+66                             default: next_pos = PISO_3;
+                               ==>
+67                         endcase
+68                     end
+69         
+70                     default: begin
+71                         next_pos = PISO_1;
+                           ==>
+
+Branches:
+
+-1-     -2-     -3-     -4-     Status      
+PISO_1  2'b00   -       -       Covered     
+PISO_1  2'b01   -       -       Covered     
+PISO_1  2'b10   -       -       Covered     
+PISO_1  2'b11   -       -       Covered     
+PISO_1  default -       -       Not Covered 
+PISO_2  -       2'b00   -       Covered     
+PISO_2  -       2'b01   -       Covered     
+PISO_2  -       2'b10   -       Covered     
+PISO_2  -       2'b11   -       Covered     
+PISO_2  -       default -       Not Covered 
+PISO_3  -       -       2'b00   Covered     
+PISO_3  -       -       2'b01   Covered     
+PISO_3  -       -       2'b10   Not Covered 
+PISO_3  -       -       2'b11   Covered     
+PISO_3  -       -       default Not Covered 
+default -       -       -       Not Covered 
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_elevador.dut.u_mef2
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 83.92  87.30 --      96.15  80.00  72.22 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 83.92  87.30 --      96.15  80.00  72.22 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME       
+ 83.92  87.30 --      96.15  80.00  72.22 mef2_motor 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME 
+ 89.06 --      87.50  90.62 --     --     dut  
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : elevador_top
+===============================================================================
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 89.06 --      87.50  90.62 --     --     
+
+Source File(s) : 
+
+/home/drueda/ArchivosParcial2/elevador_top.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME            
+ 89.06 --      87.50  90.62 --     --     tb_elevador.dut 
+
+
+
+-------------------------------------------------------------------------------
+Cond Coverage for Module : elevador_top
+
+               Total   Covered  Percent
+Conditions          8        7    87.50
+Logical             8        7    87.50
+Non-Logical         0        0
+Event               0        0
+
+ LINE       44
+ EXPRESSION (piso_wire == 2'b0)
+            ---------1---------
+
+-1- Status
+ 0  Covered
+ 1  Not Covered
+
+ LINE       45
+ EXPRESSION (piso_wire == 2'b1)
+            ---------1---------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       46
+ EXPRESSION (piso_wire == 2'b10)
+            ----------1---------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+ LINE       47
+ EXPRESSION (piso_wire == 2'b11)
+            ----------1---------
+
+-1- Status
+ 0  Covered
+ 1  Covered
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : elevador_top
+                Total Covered Percent 
+Totals          14    12      85.71   
+Total Bits      32    29      90.62   
+Total Bits 0->1 16    14      87.50   
+Total Bits 1->0 16    15      93.75   
+
+                            
+Ports          11 9  81.82  
+Port Bits      22 19 86.36  
+Port Bits 0->1 11 9  81.82  
+Port Bits 1->0 11 10 90.91  
+
+                              
+Signals          3  3  100.00 
+Signal Bits      10 10 100.00 
+Signal Bits 0->1 5  5  100.00 
+Signal Bits 1->0 5  5  100.00 
+
+Port Details
+               Toggle Toggle 1->0 Toggle 0->1 Direction 
+clk            Yes    Yes         Yes         INPUT     
+reset          No     Yes         No          INPUT     
+b1             Yes    Yes         Yes         INPUT     
+b2             Yes    Yes         Yes         INPUT     
+b3             Yes    Yes         Yes         INPUT     
+led_subiendo   Yes    Yes         Yes         OUTPUT    
+led_bajando    Yes    Yes         Yes         OUTPUT    
+led_piso1reset No     No          No          OUTPUT    
+led_piso1      Yes    Yes         Yes         OUTPUT    
+led_piso2      Yes    Yes         Yes         OUTPUT    
+led_piso3      Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+               Toggle Toggle 1->0 Toggle 0->1 
+dest_wire[1:0] Yes    Yes         Yes         
+piso_wire[1:0] Yes    Yes         Yes         
+llegada_wire   Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_elevador.dut
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 89.06 --      87.50  90.62 --     --     
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 88.78  88.89  90.91  93.90  90.91  79.31 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME         
+ 89.06 --      87.50  90.62 --     --     elevador_top 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME        
+--     --     --     --     --     --     tb_elevador 
+
+
+Subtrees :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME   
+ 96.24  94.44 100.00  95.83 100.00  90.91 u_mef1 
+ 83.92  87.30 --      96.15  80.00  72.22 u_mef2 
+
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : mef1_requests
+===============================================================================
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 96.24  94.44 100.00  95.83 100.00  90.91 
+
+Source File(s) : 
+
+/home/drueda/ArchivosParcial2/mef1_requests.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME                   
+ 96.24  94.44 100.00  95.83 100.00  90.91 tb_elevador.dut.u_mef1 
+
+
+
+-------------------------------------------------------------------------------
+Line Coverage for Module : mef1_requests
+
+             Line No.   Total   Covered  Percent
+TOTAL                       18       17    94.44
+ALWAYS             25        3        3   100.00
+ALWAYS             34       15       14    93.33
+
+24                          always_ff @(posedge clk or posedge rst) begin
+25         1/1                  if (rst) begin
+26         1/1                      current_state <= S_IDLE;
+27                              end else begin
+28         1/1                      current_state <= next_state;
+29                              end
+30                          end
+31                      
+32                          // 2. Logica combinacional de proximo estado (reproduce MEF_tabla)
+33                          always_comb begin
+34         1/1                  next_state = current_state;
+35                      
+36         1/1                  if (rst || llegada) begin
+37         1/1                      next_state = S_IDLE;
+38                              end else begin
+39         1/1                      case (current_state)
+40                                      S_IDLE: begin
+41                                          // Prioridad segun tu tabla de verdad: B1 > B2 > B3
+42         1/1                              if (b1)
+43         1/1                                  next_state = S_P1;
+44         1/1                              else if (b2)
+45         1/1                                  next_state = S_P2;
+46         1/1                              else if (b3)
+47         1/1                                  next_state = S_P3;
+48                                          else
+49         1/1                                  next_state = S_IDLE;
+50                                      end
+51                      
+52         1/1                          S_P1: next_state = S_P1;
+53         1/1                          S_P2: next_state = S_P2;
+54         1/1                          S_P3: next_state = S_P3;
+55                      
+56         0/1     ==>                  default: next_state = S_IDLE;
+
+-------------------------------------------------------------------------------
+Cond Coverage for Module : mef1_requests
+
+               Total   Covered  Percent
+Conditions          3        3   100.00
+Logical             3        3   100.00
+Non-Logical         0        0
+Event               0        0
+
+ LINE       36
+ EXPRESSION (rst || llegada)
+             -1-    ---2---
+
+-1- -2- Status
+ 0   0  Covered
+ 0   1  Covered
+ 1   0  Covered
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : mef1_requests
+                Total Covered Percent 
+Totals          9     8       88.89   
+Total Bits      24    23      95.83   
+Total Bits 0->1 12    11      91.67   
+Total Bits 1->0 12    12      100.00  
+
+                            
+Ports          7  6  85.71  
+Port Bits      16 15 93.75  
+Port Bits 0->1 8  7  87.50  
+Port Bits 1->0 8  8  100.00 
+
+                            
+Signals          2 2 100.00 
+Signal Bits      8 8 100.00 
+Signal Bits 0->1 4 4 100.00 
+Signal Bits 1->0 4 4 100.00 
+
+Port Details
+          Toggle Toggle 1->0 Toggle 0->1 Direction 
+clk       Yes    Yes         Yes         INPUT     
+rst       No     Yes         No          INPUT     
+b1        Yes    Yes         Yes         INPUT     
+b2        Yes    Yes         Yes         INPUT     
+b3        Yes    Yes         Yes         INPUT     
+llegada   Yes    Yes         Yes         INPUT     
+dest[1:0] Yes    Yes         Yes         OUTPUT    
+
+Signal Details
+                   Toggle Toggle 1->0 Toggle 0->1 
+current_state[1:0] Yes    Yes         Yes         
+next_state[1:0]    Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+FSM Coverage for Module : mef1_requests
+Summary for FSM :: current_state
+            Total Covered Percent                         
+States      4     4       100.00  (Not included in score) 
+Transitions 6     6       100.00                          
+Sequences   0     0                                       
+
+State, Transition and Sequence Details for FSM :: current_state
+-------------------------------------------------------------------------------
+states Line No. Covered 
+S_IDLE 26       Covered 
+S_P1   43       Covered 
+S_P2   45       Covered 
+S_P3   47       Covered 
+
+transitions  Line No. Covered 
+S_IDLE->S_P1 43       Covered 
+S_IDLE->S_P2 45       Covered 
+S_IDLE->S_P3 47       Covered 
+S_P1->S_IDLE 26       Covered 
+S_P2->S_IDLE 26       Covered 
+S_P3->S_IDLE 26       Covered 
+
+
+-------------------------------------------------------------------------------
+Branch Coverage for Module : mef1_requests
+         Line No. Total Covered Percent 
+Branches          11    10      90.91   
+IF       25       2     2       100.00  
+IF       36       9     8       88.89   
+
+
+25                 if (rst) begin
+                   -1-  
+26                     current_state <= S_IDLE;
+                       ==>
+27                 end else begin
+28                     current_state <= next_state;
+                       ==>
+
+Branches:
+
+-1- Status  
+1   Covered 
+0   Covered 
+
+
+36                 if (rst || llegada) begin
+                   -1-  
+37                     next_state = S_IDLE;
+                       ==>
+38                 end else begin
+39                     case (current_state)
+                       -2-  
+40                         S_IDLE: begin
+41                             // Prioridad segun tu tabla de verdad: B1 > B2 > B3
+42                             if (b1)
+                               -3-  
+43                                 next_state = S_P1;
+                                   ==>
+44                             else if (b2)
+                                    -4-  
+45                                 next_state = S_P2;
+                                   ==>
+46                             else if (b3)
+                                    -5-  
+47                                 next_state = S_P3;
+                                   ==>
+48                             else
+49                                 next_state = S_IDLE;
+                                   ==>
+50                         end
+51         
+52                         S_P1: next_state = S_P1;
+                           ==>
+53                         S_P2: next_state = S_P2;
+                           ==>
+54                         S_P3: next_state = S_P3;
+                           ==>
+55         
+56                         default: next_state = S_IDLE;
+                           ==>
+
+Branches:
+
+-1- -2-     -3- -4- -5- Status      
+1   -       -   -   -   Covered     
+0   S_IDLE  1   -   -   Covered     
+0   S_IDLE  0   1   -   Covered     
+0   S_IDLE  0   0   1   Covered     
+0   S_IDLE  0   0   0   Covered     
+0   S_P1    -   -   -   Covered     
+0   S_P2    -   -   -   Covered     
+0   S_P3    -   -   -   Covered     
+0   default -   -   -   Not Covered 
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_elevador.dut.u_mef1
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 96.24  94.44 100.00  95.83 100.00  90.91 
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 96.24  94.44 100.00  95.83 100.00  90.91 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME          
+ 96.24  94.44 100.00  95.83 100.00  90.91 mef1_requests 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME 
+ 89.06 --      87.50  90.62 --     --     dut  
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : tb_elevador
+===============================================================================
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+--     --     --     --     --     --     
+
+Source File(s) : 
+
+/home/drueda/ArchivosParcial2/tb_elevador.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME        
+--     --     --     --     --     --     tb_elevador 
+
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : tb_elevador
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+--     --     --     --     --     --     
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 88.78  88.89  90.91  93.90  90.91  79.31 
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME        
+--     --     --     --     --     --     tb_elevador 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME 
+ 88.78  88.89  90.91  93.90  90.91  79.31 dut  
+
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
